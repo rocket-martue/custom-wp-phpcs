@@ -1,4 +1,4 @@
-# WordPress Plugin Coding Standard
+# Custom WordPress Coding Standard
 
 このプロジェクトでは、WordPress Coding Standards（WPCS）に基づいたカスタムルールにより、コード品質とスタイルの統一を図っています。
 WordPressの基本ルールに沿いつつ、現場でありがちなストレスを最小限にする内容になっています。
