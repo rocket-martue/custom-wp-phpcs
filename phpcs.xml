@@ -1,17 +1,19 @@
 <?xml version="1.0"?>
 <ruleset name="WordPress Custom Standard">
 	<rule ref="WordPress">
-		<!-- 改行コード（\r\n, \n）を許可する -->
+		<!-- 改行コード（\r\n, \n）を許可する 開発環境によって異なる改行コードを許容 -->
 		<exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
 
 		<!-- ファイル名にアンダースコアが使えない & class-ではじめなければならないルールを除外 -->
-		<exclude name="WordPress.Files.FileName" />
+		<!-- このルールを適用すると、WordPressのファイル命名規則（スネークケースでアンダースコア区切り、クラスファイルは class- で始まるなど）が強制されるようになります。 -->
+		<!-- <exclude name="WordPress.Files.FileName" /> -->
 
 		<!-- 三項演算子使用可 -->
-		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
+		<!-- <exclude name="WordPress.PHP.DisallowShortTernary.Found" /> -->
 
 		<!-- コメントアウト使用可 -->
 		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
+		<!-- 一時的なデバッグ目的などで使用 最終的には削除することを推奨-->
 
 		<!-- コメントの末尾にピリオド無し可 -->
 		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
@@ -23,10 +25,10 @@
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
 
 		<!-- コメント無し可 -->
-		<!-- <exclude name="Squiz.Commenting" />
-		<exclude name="Generic.Commenting" /> -->
+		<!-- <exclude name="Squiz.Commenting" /> -->
+		<!-- <exclude name="Generic.Commenting" /> -->
 
-		<exclude-pattern>/node_modules/*</exclude-pattern>
-		<exclude-pattern>/vendor/*</exclude-pattern>
 	</rule>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
 </ruleset>
